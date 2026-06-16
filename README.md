@@ -315,12 +315,3 @@ ComplaintService.submitComplaint()
 
 ---
 
-## 💡 Interview Talking Points
-
-1. **Clean Architecture**: Controller → Service → Repository separation of concerns
-2. **AI Integration**: Real LLM API call with structured prompt engineering
-3. **Fallback Handling**: System works even when AI is unavailable
-4. **Data Validation**: Bean validation on all DTOs and entities
-5. **Database Design**: Proper foreign keys and indexes
-6. **DTO Pattern**: Entities never exposed directly to API consumers
-7. **Security**: Route-level access control with Spring Security
