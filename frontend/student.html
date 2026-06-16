@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Submit Issue - AI Campus Resolver</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-gradient"></div>
+    
+    <nav class="navbar">
+        <a href="index.html" class="nav-brand">
+            <i class="fa-solid fa-graduation-cap"></i>
+            CampusResolver
+        </a>
+        <div class="nav-links">
+            <a href="student.html" class="nav-link active">Submit Issue</a>
+            <a href="status.html" class="nav-link">Check Status</a>
+            <a href="admin.html" class="nav-link btn btn-outline" style="padding: 0.4rem 1rem;">Admin</a>
+        </div>
+    </nav>
+
+    <div class="container animate-fade-in" style="max-width: 800px;">
+        <div class="glass-card mt-4">
+            <div class="text-center mb-4">
+                <div class="badge badge-pending mb-2">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> AI Powered
+                </div>
+                <h2>Report a Campus Issue</h2>
+                <p class="mt-1" style="color: var(--text-muted);">Describe your problem and our AI will automatically route it to the correct department.</p>
+            </div>
+
+            <form id="complaintForm">
+                <div class="grid grid-cols-2" style="gap: 1rem;">
+                    <div class="form-group mb-2">
+                        <label class="form-label">Student Name</label>
+                        <input type="text" id="studentName" class="form-control" placeholder="E.g., John Doe" required>
+                    </div>
+                    <div class="form-group mb-2">
+                        <label class="form-label">Roll Number (USN)</label>
+                        <input type="text" id="rollNumber" class="form-control" placeholder="E.g., 1RV21CS001" required>
+                    </div>
+                </div>
+                
+                <div class="form-group">
+                    <label class="form-label">Issue Title</label>
+                    <input type="text" id="title" class="form-control" placeholder="E.g., WiFi not working in Library" required>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Detailed Description</label>
+                    <textarea id="description" class="form-control" placeholder="Please provide as much detail as possible so our AI can accurately classify the issue..." required></textarea>
+                </div>
+
+                <div class="form-group" style="margin-top: 2rem;">
+                    <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1rem;" id="submitBtn">
+                        <span id="btnText">Submit to AI Analysis</span>
+                        <i class="fa-solid fa-paper-plane" id="btnIcon"></i>
+                        <span class="loader hidden" id="btnLoader"></span>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="modal-overlay" id="successModal">
+        <div class="modal-content text-center">
+            <div style="width: 60px; height: 60px; border-radius: 50%; background: rgba(16, 185, 129, 0.1); color: var(--secondary); display: flex; align-items: center; justify-content: center; font-size: 2rem; margin: 0 auto 1.5rem;">
+                <i class="fa-solid fa-check"></i>
+            </div>
+            <h3 class="mb-2">Issue Submitted Successfully!</h3>
+            <p style="color: var(--text-muted); margin-bottom: 1.5rem;">Our AI has analyzed your request and forwarded it to the appropriate department.</p>
+            
+            <div class="glass-card" style="background: rgba(0,0,0,0.02); text-align: left; padding: 1rem; margin-bottom: 1.5rem;">
+                <p><strong>Tracking ID:</strong> <span id="modalId" style="color: var(--primary);"></span></p>
+                <p><strong>Category:</strong> <span id="modalCategory" style="text-transform: capitalize;"></span></p>
+                <p><strong>Priority:</strong> <span id="modalPriority" style="text-transform: capitalize;"></span></p>
+                <p><strong>Assigned To:</strong> <span id="modalDept"></span></p>
+            </div>
+
+            <a href="status.html" class="btn btn-primary" style="width: 100%;">Track Status</a>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

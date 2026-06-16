@@ -1,0 +1,23 @@
+# IDE / editor
+/.idea/
+/.vscode/
+backend/.idea/
+backend/.vscode/
+
+# Build output
+/target/
+/backend/target/
+**/target/
+
+# Java artifacts
+*.class
+*.jar
+*.war
+*.iml
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
